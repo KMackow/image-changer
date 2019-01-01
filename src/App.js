@@ -27,21 +27,22 @@ newValue(key) {
 
 handleClick(key) {
   let keys = []
-    for (let i = 0; i < 3; i++) {
-        let otherTile
-        do {
-            keys.push(Math.floor(Math.random() * 40) + 1)
-        }
-        while ( otherTile === key)
-        this.setState({
-          currentImages: update(this.state.currentImages, {
-            [key]: {$set: this.newValue(key)},
-            [keys[0]]: {$set: this.newValue(keys[0])},
-            [keys[1]]: {$set: this.newValue(keys[1])},
-            [keys[2]]: {$set: this.newValue(keys[2])}
-          })
-      })
+  for (let i = 0; i < 3; i++) {
+    let otherTile
+    do {
+        otherTile = (Math.floor(Math.random() * 40) + 1)
     }
+    while ( otherTile === key)
+    keys.push(otherTile)
+  }
+  this.setState({
+    currentImages: update(this.state.currentImages, {
+      [key]: {$set: this.newValue(key)},
+      [keys[0]]: {$set: this.newValue(keys[0])},
+      [keys[1]]: {$set: this.newValue(keys[1])},
+      [keys[2]]: {$set: this.newValue(keys[2])}
+    })
+  })
 }
 
   render() {
