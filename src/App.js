@@ -49,7 +49,7 @@ handleClick(key) {
     return (
         <div>
             <div class="row">
-                <span onClick={() => this.handleClick(0)}>
+                <span onClick={() => this.handleClick(0)} >
                     <Tile
                         imageNumber = {this.state.currentImages[0]}
                         imagePart = {1}
