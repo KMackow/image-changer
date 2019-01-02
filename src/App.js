@@ -30,7 +30,7 @@ handleClick(key) {
   for (let i = 0; i < 3; i++) {
     let otherTile
     do {
-        otherTile = (Math.floor(Math.random() * 40) + 1)
+        otherTile = (Math.floor(Math.random() * 40))
     }
     while ( otherTile === key)
     keys.push(otherTile)
